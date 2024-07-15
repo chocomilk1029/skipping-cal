@@ -25,10 +25,6 @@ export const CreativitySlider = ( {value, setValue}: { value: number, setValue: 
 
     return (
         <>
-            {/*<Typography id="input-slider" gutterBottom>*/ }
-            {/*    */ }
-            {/*</Typography>*/ }
-            <h3>Creativity</h3>
             <Grid container spacing={ 2 } alignItems="center">
                 <Grid item xs>
                     <Slider
