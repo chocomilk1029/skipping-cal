@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './App.css'
 import { Difficulty } from "./class/Difficulty.tsx";
-import { CreativitySlider, InputSlider } from "./components/CreativityButton.tsx";
+import { CreativitySlider } from "./components/CreativityButton.tsx";
 
 function App()
 {
@@ -13,18 +13,24 @@ function App()
     // 5. Total score display
 
     // Here will establish the data storage first
-    const [totalScore, setTotalScore] = useState<number>( 0 );
+    const [difficulty, setDifficulty] = useState<number>( 0 );
+    const [creativity, setCreativity] = useState<number>( 1 );
+    const [requireElement, setRequireElement] = useState<number>( 0 );
+
     // loop through the list and create the difficulty list
 
     return (
         <>
-            <h1> Total Score: { totalScore.toFixed( 3 ) }</h1>
+            <h1> Total Score: { (difficulty * creativity).toFixed( 3 ) }</h1>
+            <h2> D: { difficulty.toFixed( 3 ) }</h2>
+            <h2> P: { creativity.toFixed( 3 ) }</h2>
+
+
             <div key={ 'difficulty' }>
-                <Difficulty totalScore={ totalScore } setTotalScore={ setTotalScore }/>
+                <Difficulty totalScore={ difficulty } setTotalScore={ setDifficulty }/>
             </div>
             <div key="creativity">
-                <InputSlider></InputSlider>
-                <CreativitySlider value={ totalScore } setValue={ setTotalScore } />
+                <CreativitySlider value={ creativity } setValue={ setCreativity }/>
             </div>
         </>
     )
