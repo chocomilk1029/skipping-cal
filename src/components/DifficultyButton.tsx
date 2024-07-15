@@ -6,6 +6,8 @@ export const calMarks = ( level: number ) : number=>
     return ( 0.1 * Math.pow( 1.5, level ) )
 }
 
+//#region add and minus button 
+
 const AddBtn = ( {level, oriSum, setSum, oriCount, setCount}: {
     level: number,
     oriSum: number,
@@ -59,6 +61,8 @@ const MinusBtn = ( {level, oriSum, setSum, oriCount, setCount}: {
     )
 }
 
+//#endregion
+
 export const DiffBtn = ( {levelSet, oriSum, setSum}: {
     levelSet: number,
     oriSum: number,
@@ -69,11 +73,12 @@ export const DiffBtn = ( {levelSet, oriSum, setSum}: {
     const level = levelSet + 1;
     return (
         <>
-            <h3>Level { level } - { count }</h3>
+            <h2> Level { level } </h2>
             <ButtonGroup variant="contained">
                 <AddBtn level={ level } oriSum={ oriSum } setSum={ setSum } oriCount={ count } setCount={ setCount }/>
                 <MinusBtn level={ level } oriSum={ oriSum } setSum={ setSum } oriCount={ count } setCount={ setCount }/>
             </ButtonGroup>
+            <h3> Count: { count }</h3>
         </>
     )
 }

@@ -16,20 +16,20 @@ export const Difficulty = ( {totalScore, setTotalScore}: {
     let levelBtns = levelList.map( ( diffLevel, index ) =>
         {
             return (
-                <div key={ diffLevel + 1 }>
+                <span key={ diffLevel + 1 }>
                     <DiffBtn levelSet={ diffLevel } oriSum={ totalScore } setSum={ setTotalScore }/>
-                </div>
+                </span>
             )
         }
     );
 
     return (
-        <>
-            <div key={ -0.5 }>
+        <div className="grid-container">
+            <span key={ -0.5 }>
                 <DiffBtn levelSet={ -0.5 } oriSum={ totalScore } setSum={ setTotalScore }/>
-            </div>
+            </span>
             { levelBtns }
-        </>
+        </div>
     )
 }
 
