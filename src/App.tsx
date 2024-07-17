@@ -30,11 +30,11 @@ function App()
             <Divider>
                 <h2>Difficulty</h2>
             </Divider>
-            <div key={ 'difficulty' }>
+            <div key="difficulty">
                 <Difficulty totalScore={ difficulty } setTotalScore={ setDifficulty }/>
             </div>
             <Divider>
-                <h2>Creativity</h2>
+                <h2>Presentation</h2>
             </Divider> 
             <div key="creativity">
                 <CreativitySlider value={ creativity } setValue={ setCreativity }/>
