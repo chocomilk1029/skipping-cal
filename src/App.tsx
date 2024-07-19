@@ -23,26 +23,32 @@ function App()
 
     return (
         <>
-            <h2> Result(R) = Difficulty(D) x Presentation(P) x Deduction(M) x Required elements(Q) </h2>
-            <h2> Result = { difficulty.toFixed( 3 ) } x { creativity.toFixed( 3 ) } x 1.000
-                x { requireElement.toFixed( 3 ) } </h2>
-            <h2> Total Score = { (difficulty * creativity * requireElement).toFixed( 3 ) } </h2>
-            <Divider>
-                <h2>Difficulty</h2>
-            </Divider>
+            <div className={ "calHeader" }>
+                <h1> IJRU freestyle calculator (v3.0 Rulebook)</h1>
+                <h2> Result(R) = Difficulty(D) x Presentation(P) x Deduction(M) x Required elements(Q) </h2>
+                <h2> Result = { difficulty.toFixed( 3 ) } x { creativity.toFixed( 3 ) } x 1.000
+                    x { requireElement.toFixed( 3 ) } </h2>
+                <h2> Total Score = { (difficulty * creativity * requireElement).toFixed( 3 ) } </h2>
+            </div>
+            
             <div key="difficulty">
+                <Divider>
+                    <h2>Difficulty</h2>
+                </Divider>
                 <Difficulty totalScore={ difficulty } setTotalScore={ setDifficulty }/>
             </div>
-            <Divider>
-                <h2>Presentation</h2>
-            </Divider> 
+            
             <div key="creativity">
+                <Divider>
+                    <h2>Presentation</h2>
+                </Divider>
                 <CreativitySlider value={ creativity } setValue={ setCreativity }/>
             </div>
-            <Divider>
-                <h2>Required Element</h2>
-            </Divider>
+            
             <div key="requireElement">
+                <Divider>
+                    <h2>Required Element</h2>
+                </Divider>
                 <RequirementElement totalScore={ requireElement } setScore={ setRequireElement }/>
             </div>
         </>
